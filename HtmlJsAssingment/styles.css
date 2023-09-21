@@ -4,6 +4,12 @@ body {
     margin: 0;
     padding: 0;
   }
+
+  .doneButton{
+    width: 40px;
+    height: 40px;
+    background-color: #71a7dfba;
+  }
   
   .container {
     max-width: 600px;
@@ -60,6 +66,7 @@ body {
     background-color: #fff;
     cursor: pointer;
     transition: background-color 0.3s;
+    max-height: 40px;
   }
   
   li:hover {

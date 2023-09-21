@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>To-Do List</title>
+  
+<link rel="stylesheet" type="text/css" href="styles.css">
   <!-- TODO: Add referece to your styles file -->
 </head>
 <body>
@@ -9,6 +11,12 @@
     <!-- TODO: Add header for your todo list -->
     <div class="input-container">
         <!-- TODO: Add input field with todoInput id and placeholder text -->
+        <input type="text" id="todoText">
+        <div id="buttoncontainer">
+          <input type="button" value="push" onclick="addTodo()">
+          <input type="button" value="removeCompleted" onclick="removeCompleted()">
+        </div>
+        
 
         <!-- TODO: Add button to add new todo item -->
     </div>
@@ -17,5 +25,6 @@
     </ul>
   </div>
   <!-- TODO: Add reference to your javascript file -->
+  <script src="script.js"></script> 
 </body>
 </html>
