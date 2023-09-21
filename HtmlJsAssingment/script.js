@@ -27,6 +27,9 @@ function addTodo() {
     li.innerHTML = todoText;
 
     //Create completed button to set the task to done and removal button, createElement
+    //Add text to the completed button using textContent
+    //Add onclick method to the completed button, that changes the background color of the todo item
+    //Add classes to the buttons
 
     //removal button
     const removeBtn = document.createElement("input");
@@ -46,32 +49,32 @@ function addTodo() {
     checkBtn.setAttribute("id", "doneid"+x)
     checkBtn.setAttribute("value","\u2713");
 
+    //append the list element and buttons to the root of lists
     listRoot.appendChild(li);
     li.appendChild(checkBtn);
     li.appendChild(removeBtn);
-    // TODO: Add text to the completed button using textContent
 
-    // TODO: Add onclick method to the completed button, that changes the background color of the todo item
     // Below is one way to change the background color using ternary logic
     // todoListItem.style.backgroundColor = todoListItem.style.backgroundColor == "green" ? "" : "green";
+    //The above is achieved with 2 functions markdone() unmarkdone() so we can also keep track of todos that have been done
 
-    // TODO: Add created done button to new todo list item
-
-    // TODO: Add new todo list item to todoList
-
-    // TODO: Set todoInput value to empty string
+    //Set todoInput value to empty string
     document.getElementById("todoText").value = "";
 }
 
+
+//function for removing a single todo item
 function removeTodo(ToDoToBeRemoved){
     document.getElementById(ToDoToBeRemoved).remove();
 }
 
 
+//function to clear the entire todo list
 function removeAll(){
     document.getElementById("todoList").innerHTML = "";
 }
 
+//function to clear all the todos that have been marked as done
 function removeCompleted(){
     var arr = document.querySelectorAll("li[checked]");
 
@@ -83,6 +86,7 @@ function removeCompleted(){
       }
 }
 
+//functions to change buttons colour and give and or remove the checked status
 function markDone(x){
     document.getElementById("todolistitem"+x).setAttribute("checked", "true");
     document.getElementById("doneid"+x).style.backgroundColor = "aqua";
@@ -95,6 +99,3 @@ function unmarkDone(x){
       document.getElementById("doneid"+x).setAttribute("onclick", "markDone("+x+")")
 
 }
-
-// Extra assingment -> try to find a way to remove all completed todo items
-// hint -> you might need to use additional list variable
